@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*1. Написати функцію, яка підраховує кількість голосних літер в англійському слові. Приклад: 'beautiful morning' — 7 голосних літер. */
+
+        function countVowels(word) {
+            let result = word.match(/[aeiou]/gi);
+            return result ? result.length : 0;
+        }
+        console.log(countVowels('beautiful morning'));
+
+        /*2. Написати функцію, яка підраховує кількість слів у реченні. Між словами може бути різна кількість пробілів. Приклад: 'Learning JavaScript is interesting' — 5 слів. Підказки: [aeiou] — англійські голосні літери. i — пошук без урахування регістру. g — пошук усіх збігів. [^\s]+ — одна або більше послідовних непробільних символів. Метод match() повертає масив знайдених збігів або null, якщо збігів немає.*/
+
+        function countWords(sentence) {
+            let result = sentence.match(/[^\s]+/g);
+            return result ? result.length : 0;
+        }
+        console.log(countWords('Learning JavaScript is interesting')); 
+    </script>
+</body>
+
+</html>
